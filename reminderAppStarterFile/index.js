@@ -36,10 +36,7 @@ app.get("/register", authController.register);
 app.get("/login", authController.login);
 app.post("/register", authController.registerSubmit);
 app.post("/login", authController.loginSubmit);
-app.up("/edit", authController.);
 
-// app.delete('/delete', authController.)
-// })
 
 
 app.listen(3001, function () {

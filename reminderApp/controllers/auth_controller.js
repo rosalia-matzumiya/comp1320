@@ -1,4 +1,4 @@
-let database = require("../database");
+let database = require("../models/userModel").database;
 const userModel = require("../models/userModel").userModel;
 
 const getUserByEmailIdAndPassword = (email, password) => {
@@ -21,25 +21,6 @@ const getUserById = (id) => {
 function isUserValid(user, password) {
   return user.password === password;
 }
-
-// let authController = {
-//   login: (req, res) => {
-//     res.render("auth/login");
-//   },
-
-//   register: (req, res) => {
-//     res.render("auth/register");
-//   },
-
-//   loginSubmit: (req, res) => {
-//     // implement
-
-//   },
-
-//   registerSubmit: (req, res) => {
-//     // implement
-//   },
-// };
 
 module.exports = {
   getUserByEmailIdAndPassword,

@@ -5,10 +5,9 @@ const { forwardAuthenticated } = require("../middleware/checkAuth");
 const router = express.Router();
 
 //localhost:8000/auth/login
-router.get("/login", forwardAuthenticated, (req, res) => res.render("login"));
+router.get("/login", forwardAuthenticated, (req, res) => res.render("auth/login"));
 
-router.post(
-  "/login",
+router.post("/login",
   passport.authenticate("local", {
     successRedirect: "/reminders",
     failureRedirect: "/auth/login",
@@ -17,7 +16,7 @@ router.post(
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/");
+  res.redirect("/auth/login");
 });
 
 module.exports = router;
